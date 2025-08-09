@@ -1,0 +1,14 @@
+@model ProductMvc.Models.Product
+@inject Microsoft.Extensions.Localization.IStringLocalizer<ProductMvc.SharedResource> Localizer
+<h1>@Localizer["CreateNewProduct"]</h1>
+<form asp-action="Create" method="post">
+    <div>
+        <label>@Localizer["Name"]</label>
+        <input asp-for="Name" />
+    </div>
+    <div>
+        <label>@Localizer["Price"]</label>
+        <input asp-for="Price" />
+    </div>
+    <button type="submit">@Localizer["Save"]</button>
+</form>

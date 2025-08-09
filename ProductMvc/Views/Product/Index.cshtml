@@ -1,0 +1,23 @@
+@model IEnumerable<ProductMvc.Models.Product>
+@inject Microsoft.Extensions.Localization.IStringLocalizer<ProductMvc.SharedResource> Localizer
+<h1>@Localizer["ProductList"]</h1>
+<a asp-action="Create">@Localizer["CreateNewProduct"]</a>
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>@Localizer["Name"]</th>
+            <th>@Localizer["Price"]</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>@item.Price</td>
+        </tr>
+    }
+    </tbody>
+</table>
